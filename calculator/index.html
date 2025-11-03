@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Scientific Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app__header">
+            <h1 class="app__title">Calculator</h1>
+            <div class="app__actions">
+                <button class="btn btn--ghost" id="toggle-deg" aria-pressed="true" aria-label="Toggle degrees or radians">DEG</button>
+                <button class="btn btn--ghost" id="toggle-theme" aria-label="Toggle theme">🌙</button>
+            </div>
+        </header>
+
+        <main class="calculator" role="application" aria-label="Scientific calculator">
+            <section class="display" aria-live="polite">
+                <div class="display__history" id="history"></div>
+                <input class="display__input" id="display" type="text" inputmode="decimal" autocomplete="off" aria-label="Calculator display" />
+            </section>
+
+            <section class="keypad" id="keypad" aria-label="Calculator keypad">
+                <div class="keypad__row">
+                    <button data-action="mc" class="btn btn--sm">MC</button>
+                    <button data-action="mr" class="btn btn--sm">MR</button>
+                    <button data-action="mplus" class="btn btn--sm">M+</button>
+                    <button data-action="mminus" class="btn btn--sm">M-</button>
+                    <button data-action="clear" class="btn btn--danger">AC</button>
+                </div>
+
+                <div class="keypad__row">
+                    <button data-fn="sin" class="btn">sin</button>
+                    <button data-fn="cos" class="btn">cos</button>
+                    <button data-fn="tan" class="btn">tan</button>
+                    <button data-fn="asin" class="btn">sin⁻¹</button>
+                    <button data-fn="acos" class="btn">cos⁻¹</button>
+                    <button data-fn="atan" class="btn">tan⁻¹</button>
+                </div>
+
+                <div class="keypad__row">
+                    <button data-fn="ln" class="btn">ln</button>
+                    <button data-fn="log" class="btn">log</button>
+                    <button data-fn="exp" class="btn">exp</button>
+                    <button data-fn="sqrt" class="btn">√</button>
+                    <button data-fn="pow" class="btn">xʸ</button>
+                    <button data-fn="fact" class="btn">n!</button>
+                </div>
+
+                <div class="keypad__row">
+                    <button data-val="(" class="btn">(</button>
+                    <button data-val=")" class="btn">)</button>
+                    <button data-fn="pi" class="btn">π</button>
+                    <button data-fn="e" class="btn">e</button>
+                    <button data-action="percent" class="btn">%</button>
+                    <button data-action="invert" class="btn">±</button>
+                </div>
+
+                <div class="keypad__grid">
+                    <button data-val="7" class="btn">7</button>
+                    <button data-val="8" class="btn">8</button>
+                    <button data-val="9" class="btn">9</button>
+                    <button data-op="/" class="btn btn--op">÷</button>
+
+                    <button data-val="4" class="btn">4</button>
+                    <button data-val="5" class="btn">5</button>
+                    <button data-val="6" class="btn">6</button>
+                    <button data-op="*" class="btn btn--op">×</button>
+
+                    <button data-val="1" class="btn">1</button>
+                    <button data-val="2" class="btn">2</button>
+                    <button data-val="3" class="btn">3</button>
+                    <button data-op="-" class="btn btn--op">−</button>
+
+                    <button data-val="0" class="btn btn--wide">0</button>
+                    <button data-val="." class="btn">.</button>
+                    <button data-op="+" class="btn btn--op">+</button>
+                    <button data-action="backspace" class="btn" aria-label="Backspace">⌫</button>
+                    <button data-action="equals" class="btn btn--equals" aria-label="Equals">=</button>
+                </div>
+            </section>
+
+            <aside class="history" aria-label="History">
+                <div class="history__header">
+                    <h2>History</h2>
+                    <button class="btn btn--ghost" id="clear-history">Clear</button>
+                </div>
+                <ul class="history__list" id="history-list"></ul>
+            </aside>
+        </main>
+
+        <footer class="app__footer">
+            <span>Keyboard: numbers, + − × ÷, Enter, Backspace. Shift+^ for power.</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
+
+
